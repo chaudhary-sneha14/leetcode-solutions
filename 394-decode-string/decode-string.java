@@ -3,6 +3,7 @@ class Solution {
         Stack<Integer> st = new Stack<>();
         StringBuilder sb = new StringBuilder();
         Stack<String> br = new Stack<>();
+        
         int num = 0;
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
@@ -18,7 +19,7 @@ class Solution {
             } else { // if(s.charAt(i)==']')
                 String str = "";
                 while (!br.peek().equals("[")) {
-                    str = br.pop()+str;
+                    str = br.pop() + str;
                 }
                 br.pop();
                 int no = st.pop();
@@ -31,13 +32,13 @@ class Solution {
                 br.push(temp);
 
             }
-        
-    
-        }
-    StringBuilder ans = new StringBuilder();while(!br.isEmpty())
-    {
-        ans.insert(0, br.pop());
-    }
 
-    return ans.toString();
-}}
+        }
+        StringBuilder ans = new StringBuilder();
+        while (!br.isEmpty()) {
+            ans.insert(0, br.pop());
+        }
+
+        return ans.toString();
+    }
+}
